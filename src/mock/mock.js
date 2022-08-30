@@ -1,21 +1,23 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const myTasks = [
     {
-        id: 123,
+        id: uuidv4(),
         task: 'go to super-market',
         isComplete: true,
     },
     {
-        id: 456,
+        id: uuidv4(),
         task: 'make your homework',
         isComplete: false,
     },
     {
-        id: 789,
+        id: uuidv4(),
         task: 'visit grandma :)',
         isComplete: false,
     },
     {
-        id: 101112,
+        id: uuidv4(),
         task: 'play with your child',
         isComplete: true,
     },

@@ -1,23 +1,16 @@
-import {useState} from "react";
-
 function TodoItem({item, check}) {
-    const [checked, setChecked] = useState(item.isComplete);
-    console.log(checked);
-    const itemCheck = () => {
-      check(item.id);
-      if (checked) {
-          setChecked(false);
-      } else {
-          setChecked(true);
-      }
+    const itemCheck = (e) => {
+        check(item.id, e.target.checked);
     };
+
     return (
         <div>
-            <input type="checkbox" checked={checked} onChange={itemCheck}/>
+            <input type="checkbox"
+                   checked={item.isComplete}
+                   onChange={itemCheck}/>
             <span>
                 <h3>task: {item.task}</h3>
             </span>
-
         </div>
     );
 
