@@ -19,4 +19,4 @@ export const myTasks = [
         task: 'play with your child',
         isComplete: true,
     },
-]
+];
