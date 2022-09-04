@@ -1,16 +1,26 @@
-function TodoItem({item, check}) {
-    const itemCheck = (e) => {
-        check(item.id, e.target.checked);
+function TodoItem({item, index, checkToggle, removeItem, editItem}) {
+    const itemCheck = (event) => {
+        checkToggle(item.id, event.target.checked);
+    };
+
+    const onRemoveItem = () => {
+        removeItem(item.id);
+    };
+
+    const onAddItem = () => {
+        editItem(item.id);
     };
 
     return (
-        <div>
+        <div className="task-wrapper container">
+            <p>{index}</p>
             <input type="checkbox"
                    checked={item.isComplete}
-                   onChange={itemCheck}/>
-            <span>
-                <h3>task: {item.task}</h3>
-            </span>
+                   onChange={itemCheck}
+            />
+            <p>task: {item.task}</p>
+            <button onClick={onAddItem}>Edit</button>
+            <button onClick={onRemoveItem}>X</button>
         </div>
     );
 
